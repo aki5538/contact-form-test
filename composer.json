@@ -1,0 +1,21 @@
+{
+  "require": {
+    "php": "^8.3",
+    "laravel/framework": "^10.0",
+    "doctrine/dbal": "^3.10",
+    "maatwebsite/excel": "^3.1"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Maatwebsite/Laravel-Excel"
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": true
+    }
+  }
+}
