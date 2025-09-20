@@ -16,8 +16,9 @@ docker compose up -d --build
 envファイルの準備
 ```
 cp src/.env.example src/.env
-※ Laravel本体は  ディレクトリ内にあります。
 ```
+※ Laravel本体はsrcディレクトリ内にあります。
+
 
 envファイルの修正
 
