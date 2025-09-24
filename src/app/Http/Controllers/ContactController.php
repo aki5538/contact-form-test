@@ -7,6 +7,9 @@ use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 use Illuminate\Support\Facades\Response;
+use App\Models\UserInquiry;
+
+
 
 class ContactController extends Controller
 {
@@ -37,6 +40,7 @@ class ContactController extends Controller
     // データ保存 → サンクスページへ
     public function store(Request $request)
     {
+        dd($request->all());
         $validated = $request->validate([
             'last_name' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
@@ -52,7 +56,12 @@ class ContactController extends Controller
         ]);
 
         $validated['tel'] = $validated['tel1'] . '-' . $validated['tel2'] . '-' . $validated['tel3'];
-        Contact::create($validated);
+        $validated['name'] = $request->input('last_name') . ' ' . $request->input('first_name');
+
+        dd($validated['name']);
+
+
+        UserInquiry::create($validated);
 
         return redirect()->route('contact.thanks');
     }

@@ -35,6 +35,7 @@ DB_PASSWORD=laravel_pass
 Laravelのセットアップ
 ```
 docker-compose exec php bash
+cd src
 composer install
 php artisan migrate
 php artisan key:generate

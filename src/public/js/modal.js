@@ -2,17 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
     const closeBtn = document.getElementById('modal-close');
     const deleteForm = document.getElementById('delete-form');
-    if (!deleteForm) {
-    console.warn('delete-form が見つかりませんでした');
-    }
 
+    if (!deleteForm) {
+        console.warn('delete-form が見つかりませんでした');
+    }
 
     document.querySelectorAll('.open-modal').forEach(button => {
         button.addEventListener('click', function () {
-            alert('詳細ボタン押されたよ！');
-
-
-
             // ✅ モーダルにデータをセット
             document.getElementById('modal-name').textContent = this.dataset.name;
             document.getElementById('modal-gender').textContent = this.dataset.gender;
@@ -26,11 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
             deleteForm.action = `/admin/${this.dataset.id}`;
 
             // ✅ モーダル表示
-            modal.classList.remove('hidden');
+            modal.classList.add('show');
         });
     });
 
     closeBtn.addEventListener('click', function () {
-        modal.classList.add('hidden');
+        console.log('×ボタン押された！');
+        modal.classList.remove('show');
     });
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせフォーム</title>
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     @yield('css')
 </head>
 <body>

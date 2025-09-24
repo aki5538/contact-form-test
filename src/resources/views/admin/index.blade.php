@@ -23,7 +23,7 @@
 
         <!-- 検索フォーム -->
         <form method="GET" action="{{ route('admin.index') }}">
-            <input type="text" name="keyword" value="{{ request('name') }}" placeholder="名前">
+            <input type="text" name="name" value="{{ request('name') }}" placeholder="名前">
             <input type="text" name="email" value="{{ request('email') }}" placeholder="メールアドレス">
 
             <select name="gender">
@@ -112,7 +112,7 @@
 
     {{ $contacts->links() }}
 
-    <div id="modal" class="hidden">
+    <div id="modal" class="modal hidden">
         <div class="modal-content">
             <span class="close" id="modal-close">×</span>
             <p>お名前：<span id="modal-name"></span></p>
@@ -132,5 +132,16 @@
     </div>
 
     <script src="{{ asset('js/modal.js') }}?v={{ time() }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.open-modal').forEach(button => {
+                button.addEventListener('click', function () {
+                    alert('モーダル開くよ！');
+                    document.getElementById('modal').classList.add('show');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
